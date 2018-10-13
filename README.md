@@ -12,7 +12,7 @@ If your file looks like this:
 
 Do this:
 
-    ❯ python3 patternsplit.py sample_in.csv --pattern SAME
+    ❯ python3 csvsplit.py sample_in.csv --pattern SAME
 
 ...and get this:
 
@@ -23,4 +23,4 @@ Do this:
 
 ## Interactive Help
 
-    ❯ python3 patternsplit.py --help
+    ❯ python3 csvsplit.py --help
