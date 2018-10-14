@@ -19,7 +19,7 @@ with open(args.in_csv, 'r') as f:
 pattern = re.compile(args.pattern)
 sentinels = []
 for idx, field in enumerate(data):
-    if pattern.match(field.strip()):
+    if pattern.search(field.strip()):
         sentinels.append(idx)
 
 # Assume that the depth of the first sentinel represents the offset for the first row
