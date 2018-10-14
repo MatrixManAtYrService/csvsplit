@@ -1,6 +1,6 @@
 # CSV Pattern Split
 
-This is a fork of csvsplit that has been tweaked for a particular usage.  If I didn't make this fork just for you, it's probably not what you want--go check out master.
+This is a fork of csvsplit that has been tweaked for a particular usage.  If I didn't make this fork just for you, it's probably not what you want--go check out [master](https://github.com/MatrixManAtYrService/csvsplit).
 
 ## Requirements
 
