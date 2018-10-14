@@ -19,7 +19,7 @@ with open(args.in_csv, 'r') as f:
 pattern = re.compile(args.pattern)
 sentinels = []
 for idx, field in enumerate(data):
-    if pattern.search(field.strip()):
+    if pattern.match(field.strip()):
         sentinels.append(idx)
 
 # Assume that the depth of the first sentinel represents the offset for the first row
@@ -46,8 +46,8 @@ for row in rows:
                 row.insert(8,'')
         print(','.join(row))
     except IndexError:
-        print("ERROR on row:")
-        print(','.join(row))
+        print("ERROR on row:", file=sys.stderr)
+        print(','.join(row), file=sys.stderr)
 
 # Warn if called with no redirection
 if sys.stdout.isatty():
