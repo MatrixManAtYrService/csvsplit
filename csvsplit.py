@@ -37,6 +37,9 @@ rows.append(data[end:])
 
 # Print them to stdout
 for row in rows:
+    if row[20] == '0':
+        for i in range(5):
+            row.insert(26,'')
     print(','.join(row))
 
 # Warn if called with no redirection
