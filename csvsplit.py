@@ -5,7 +5,7 @@ import argparse
 
 parser = argparse.ArgumentParser(description='Break a single-row csv into multiple rows based on a repeating pattern')
 parser.add_argument("in_csv", help="The single-row csv file")
-parser.add_argument("--pattern", default='2\.21822E\+12', help="The pattern that appears in each row")
+parser.add_argument("--pattern", default='^[0-9]{13}$', help="The pattern that appears in each row")
 args = parser.parse_args()
 
 # Get data from file
@@ -19,7 +19,7 @@ with open(args.in_csv, 'r') as f:
 pattern = re.compile(args.pattern)
 sentinels = []
 for idx, field in enumerate(data):
-    if pattern.search(field):
+    if pattern.search(field.strip()):
         sentinels.append(idx)
 
 # Assume that the depth of the first sentinel represents the offset for the first row

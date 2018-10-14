@@ -14,6 +14,6 @@ This command will fix the columns in ra_in.csv and write the fixed file to one c
 
 ## Warnings
 
-We're relying on the presence of '2.21822E+12' as a signal that the row starts.  We're also relying on no field containing a comma.
+We're relying on the presence of thirteen digit numbers as a signal that the row starts.  We're also relying on no field containing a comma.
 
 If these assumptions fail, the columns will be a mess.  Now that we understand the file, adapting to such a failure should be trivial.
