@@ -40,10 +40,14 @@ rows.append(data[end:])
 
 # Print them to stdout
 for row in rows:
-    if row[13] == '0':
-        for i in range(5):
-            row.insert(8,'')
-    print(','.join(row))
+    try:
+        if row[13] == '0':
+            for i in range(5):
+                row.insert(8,'')
+        print(','.join(row))
+    except IndexError:
+        print("ERROR on row:")
+        print(','.join(row))
 
 # Warn if called with no redirection
 if sys.stdout.isatty():
