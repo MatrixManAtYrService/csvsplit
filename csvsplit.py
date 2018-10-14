@@ -23,7 +23,10 @@ for idx, field in enumerate(data):
         sentinels.append(idx)
 
 # Assume that the depth of the first sentinel represents the offset for the first row
-offset = sentinels[0]
+#offset = sentinels[0]
+
+# Actually, just start with the sentinel, this will prevent the error codes from wrapping
+offset = 0
 
 # Collect rows
 rows = []
@@ -37,9 +40,9 @@ rows.append(data[end:])
 
 # Print them to stdout
 for row in rows:
-    if row[20] == '0':
+    if row[13] == '0':
         for i in range(5):
-            row.insert(26,'')
+            row.insert(8,'')
     print(','.join(row))
 
 # Warn if called with no redirection
